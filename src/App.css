@@ -36,3 +36,97 @@
     transform: rotate(360deg);
   }
 }
+
+/* Import Poppins font from Google Fonts */
+* {
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the overall container */
+.day-planner-container {
+  width: 400px; /* Adjust the size to form a square */
+  height: 400px; /* Square shape */
+  margin: auto; /* Center horizontally */
+  margin-top: calc(50vh - 200px); /* Center vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px; /* Rounded corners */
+  background-color: #568EA3; /* Background color of the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Additional styling for text elements */
+h1, h2 {
+  margin: 10px 0;
+  font-weight: 600; /* Bold font for headings */
+}
+
+/* Style the task list */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* Individual task items */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FF5A5F;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Optional task form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90%;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #003E1F;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #003E1F;
+}
