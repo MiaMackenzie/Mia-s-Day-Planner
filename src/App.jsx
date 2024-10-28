@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Task from './Task';
 import TaskForm from './TaskForm';
-import './App.css'; // Importing the CSS file
+import './App.css';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
+  const [filter, setFilter] = useState('All'); // Filter state
 
   // Add new task
   const addTask = (task) => {
@@ -26,13 +27,29 @@ const App = () => {
   // Count completed tasks
   const completedTasks = tasks.filter(task => task.completed).length;
 
+  // Filter tasks based on selection
+  const filteredTasks = tasks.filter(task => {
+    if (filter === 'Completed') return task.completed;
+    if (filter === 'Pending') return !task.completed;
+    return true;
+  });
+
   return (
     <div className="day-planner-container">
       <h1>Day Planner</h1>
       <TaskForm addTask={addTask} />
+
+      {/* Filter selection */}
+      <div className="filter-container">
+        <button onClick={() => setFilter('All')}>All</button>
+        <button onClick={() => setFilter('Completed')}>Completed</button>
+        <button onClick={() => setFilter('Pending')}>Pending</button>
+      </div>
+
       <h2>{completedTasks} tasks completed</h2>
+
       <ul>
-        {tasks.map((task) => (
+        {filteredTasks.map((task) => (
           <Task
             key={task.id}
             task={task}
